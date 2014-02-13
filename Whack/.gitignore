@@ -1,0 +1,29 @@
+#	FOLDERS WE CAN ELIMINATE
+bin/
+target/
+
+
+#	LOCAL PROJECT SETTINGS...
+.settings/
+
+#	JAVA PROJECT CLASSES
+*.class
+
+##	OSX related...
+.DS_Store
+
+#	PACKAGES
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
+#	LOGS AND DATABASES
+*.log
+*.sql
+*.sqlite
