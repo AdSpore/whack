@@ -44,21 +44,14 @@
 			<timezone>-8</timezone>
 		</developer>
 	</developers>
-	<issueManagement>
-		<system>jira</system>
-		<url>http://www.igniterealtime.org/issues/browse/WHACK</url>
-	</issueManagement>
-	<!--
-	<scm>
-		<connection>http://www.igniterealtime.org/downloads/source.jsp</connection>
-		<url>http://www.igniterealtime.org/fisheye/viewrep/svn-org/whack</url>
-	</scm>
-	-->
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -86,13 +79,6 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<!--
-		<dependency>
-			<groupId>org.igniterealtime</groupId>
-			<artifactId>tinder</artifactId>
-			<version>1.2.4-SNAPSHOT</version>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>org.igniterealtime</groupId>
 			<artifactId>tinder</artifactId>
@@ -108,13 +94,36 @@
 			<artifactId>xpp3</artifactId>
 			<version>1.1.4c</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.6.1</version>
-			<scope>runtime</scope>
-		</dependency>
-		-->
 	</dependencies>
+	<repositories>
+	    <repository>
+	        <id>adspore-nexus</id>
+	        <name>AdSpore Caching Repository</name>
+	        <url>http://minimac:8081/nexus/content/repositories/central/</url>
+	        
+	        <releases>
+	            <enabled>true</enabled>
+	        </releases>
+	        
+	        <snapshots>
+	            <enabled>true</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
+	
+	<distributionManagement>
+  		<!-- Publish versioned releases here -->
+		<repository>
+		  <id>adspore-nexus</id>
+		  <name>My releases</name>
+		  <url>http://minimac:8081/nexus/content/repositories/releases/</url>
+		</repository>
+ 
+  		<!-- Publish snapshots here -->
+  		<snapshotRepository>
+    		<id>adspore-nexus</id>
+    		<name>My snapshots</name>
+    		<url>http://minimac:8081/nexus/content/repositories/snapshots</url>
+  		</snapshotRepository>
+	</distributionManagement>
 </project>
